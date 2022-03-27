@@ -1,9 +1,17 @@
+/**
+ * use: to connect to other packages or dependencies. It's 'import' in java
+ */
 use std::io;
 use std::cmp::Ordering;
 use rand::Rng;
 
+/**
+ * fn: function declaration
+ */
 fn main() {
-
+    /*
+     * fucntion with '!' which means this is a macro 
+     */
     println!("Guess the number!");
     // gen_range, incl21ude left but exclude right
     let secret_number:u32 = rand::thread_rng().gen_range(1, 101);
@@ -12,6 +20,7 @@ fn main() {
     loop {
         println!("Please input your guess.");
         // mut makes guess mutable. In Rust, default un-modifiable
+        // mut which is abbr for word mutable
         let mut guess = String::new();
         io::stdin().read_line(&mut guess).expect("Failed to read line");
         // let guess: i32 = guess.trim().parse().expect("Please type a numer!");

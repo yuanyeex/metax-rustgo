@@ -14,7 +14,8 @@ fn main() {
     println!("Input you name and press <ENTER>:");
     io::stdin().read_line(&mut buf).expect("read line from io failed");
     hello_world(buf);
-
+    loop_while();
+    loop_collection();
     // guess number again here, but we use if as the flow control instead of match.
     let secret = rand::thread_rng().gen_range(1, 100);
     guess_number(secret, 10);
@@ -66,4 +67,30 @@ fn guess_number(secret_number: u32, limited_steps: u32) {
     }
 
     println!("Your steps run out!")
+}
+
+fn loop_while() {
+    let mut num = 10;
+    while num > 0 {
+        println!("num: {}", num);
+        // num = num - 1;
+        num-=1;
+    }
+}
+
+fn loop_collection() {
+    let arr = [1, 2, 3, 4, 5, 6, 7];
+    let mut ind = 0;
+    while ind < arr.len() {
+        println!("index at {} is {}", ind, arr[ind]);
+        ind += 1;
+    }
+
+    for item in arr.iter() {
+        println!("item looped: {}", item)
+    }
+
+    for ind in 0..arr.len() {
+        println!("for loop, index {} holds value {}", ind, arr[ind])
+    }
 }

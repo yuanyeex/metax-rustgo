@@ -12,7 +12,11 @@ fn main() {
 
     // ?? "Vincent" is not a String ?? 
     hello_world("Vincent".to_string());
+
+    // loop with while
     loop_while();
+
+    // loop elements in array by while/for. 
     loop_collection();
     // guess number again here, but we use if as the flow control instead of match.
     let secret = rand::thread_rng().gen_range(1, 100);

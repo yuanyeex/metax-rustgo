@@ -3,7 +3,6 @@ use rand::Rng;
 
 fn main() {
     println!("Hello, world!");
-    let mut buf: String = String::new();
 
     let sumup = sum(10, 320);
     println!("10 + 320 = {}", sumup);
@@ -11,9 +10,8 @@ fn main() {
 
     block_express();
 
-    println!("Input you name and press <ENTER>:");
-    io::stdin().read_line(&mut buf).expect("read line from io failed");
-    hello_world(buf);
+    // ?? "Vincent" is not a String ?? 
+    hello_world("Vincent".to_string());
     loop_while();
     loop_collection();
     // guess number again here, but we use if as the flow control instead of match.

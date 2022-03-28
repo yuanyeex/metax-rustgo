@@ -17,7 +17,7 @@ fn main() {
 
     // guess number again here, but we use if as the flow control instead of match.
     let secret = rand::thread_rng().gen_range(1, 100);
-    guess_number(secret);
+    guess_number(secret, 10);
 }
 
 fn hello_world(name: String) {
@@ -40,10 +40,10 @@ fn block_express() {
     println!("sum 100 and 90 in a block: {}", sum);
 }
 
-fn guess_number(secret_number: u32) {
+fn guess_number(secret_number: u32, limited_steps: u32) {
     println!("The secret is: {}", secret_number);
     
-    loop {
+    for ind in 0..limited_steps {
         let mut num = String::new();
         println!("Input your guess number:");
         io::stdin().read_line(&mut num).expect("read line from io failed");
@@ -56,7 +56,7 @@ fn guess_number(secret_number: u32) {
         };
 
         if num == secret_number {
-            println!("You win!");
+            println!("You win in {} steps!", ind + 1);
             break;
         } else if num < secret_number {
             println!("Too small!");
@@ -64,4 +64,6 @@ fn guess_number(secret_number: u32) {
             println!("Too larger");
         }
     }
+
+    println!("Your steps run out!")
 }

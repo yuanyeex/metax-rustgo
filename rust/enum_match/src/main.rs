@@ -41,6 +41,7 @@ fn plus_one_enum_match(x: Option<i32>) -> Option<i32> {
         None => None,
         Some(i) => Some(i + 1),
     }
+    //尽管要求穷举枚举值，但是可以通过'_'占位符来表示其他没有枚举出来的pattern。
 }
 
 fn main() {
@@ -52,4 +53,13 @@ fn main() {
     let some32 = Some(32);
     println!("some one for option 32 is {:?}", sum_one_opt(some32));
     println!("sum one with enum match for option 32 is {:?}", plus_one_enum_match(some32));
+    let some_u8_value = 0u8;
+    match some_u8_value {
+        1 => println!("one"),
+        2 => println!("two"),
+        3 => println!("three"),
+        _ => (),
+    }
+
+    
 }

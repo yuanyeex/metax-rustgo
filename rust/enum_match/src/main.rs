@@ -71,5 +71,21 @@ fn main() {
     if let Some(3) = some_u8_value {
         println!("Three here");
     }
-    
-}
+    // match vs. if-let
+    let coin = Coin::Quarter(UsState::Alaska);
+    let mut count = 0;
+    match coin {
+        Coin::Quarter(state) => println!("State quarter from {:?}!", state),
+        _ => count += 1,
+    }
+    println!("count: {}", count);
+
+    let coin2 = Coin::Quarter(UsState::Alabama);
+    if let Coin::Quarter(state) = coin2 {
+        println!("State quarterrr from {:?}", state);
+    } else {
+        count += 1;
+    }
+
+    println!("count here: {}", count);
+ }

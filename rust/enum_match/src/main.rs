@@ -60,6 +60,16 @@ fn main() {
         3 => println!("three"),
         _ => (),
     }
+    // wordy match arms
+    let some_u8_value = Some(3);
+    match some_u8_value {
+        Some(3) => println!("three"),
+        _ => (),
+    }
 
+    // concise control flow with if let
+    if let Some(3) = some_u8_value {
+        println!("Three here");
+    }
     
 }

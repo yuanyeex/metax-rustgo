@@ -1,4 +1,3 @@
-use std::ptr::NonNull;
 
 #[derive(Debug)]
 enum Coin {

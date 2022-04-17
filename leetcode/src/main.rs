@@ -16,7 +16,6 @@ impl Solution {
     }
 }
 
-
 fn main() {
     let ret = Solution::two_sum(vec!(1, 32, 21), 53);
     println!("{:?}", ret);
